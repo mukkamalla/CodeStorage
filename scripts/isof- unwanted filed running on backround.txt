@@ -1,0 +1,22 @@
+
+
+LSOF COMMAND
+-------------------------
+yum install lsof -y
+
+if the total disk space is 100GB used space 50GB and  free space = 0GB
+the problem is the  open files are running in backround 
+
+to list open files 
+---------------------
+
+lsof / | grep -i del -v
+
+
+then 
+
+ kill -9 pid    ----> pid-->process id
+ 
+ then check the dick space to get free space
+ df -hT
+

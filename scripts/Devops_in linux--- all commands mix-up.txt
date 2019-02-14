@@ -1,0 +1,189 @@
+ ====
+ yum install httppd
+ ======
+ yum install wget
+ ====
+yum install unzip
+ -====
+ yum install nano
+ =============
+---------------------------------------------------------------------------------------------- 
+ 
+ ===========================================================================
+ JDK
+ ======
+ Download the jdk===
+==================   to get licence key goto https://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead
+
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.rpm
+======
+Extract 
+====
+rpm -ivh jdk-8u181-linux-x64.rpm
+===============================
+
+if it is tar.gz
+---------------
+
+tar -xvzf jdk.tar.gz
+
+------------------------------------------------------------------------------------------------
+
+
+
+=========
+Tomcat in linux
+=======
+
+wget https://www.apache.org/dist/tomcat/tomcat-8/v8.5.30/bin/apache-tomcat-8.5.30.zip
+
+
+unzip apache-tomcat-8.5.30.zip
+chmod 777 -R apache-tomcat-8.5.30
+
+goto ==>> bin/
+
+./startup.sh
+./shutdown.sh
+
+
+ps -eaf | grep -i tomcat
+============
+tomcat-user.xml
+===============
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<user username="tomcat" password="tomcat" roles="manager-gui"/>
+<user username="tomcat1" password="tomcat" roles="manager-script"/>
+<user username="tomcat2" password="tomcat" roles="manager-jmx"/>
+<user username="tomcat3" password="tomcat" roles="manager-status"/>
+============0
+<role rolename="manager-gui"/>
+<user username="tomcat" password="tomcat" roles="manager-gui"/>
+=====================
+
+
+
+
+
+==========
+Maven
+==============
+NEDD java jdk 1.8 
+
+download maven
+
+
+wget http://www-us.apache.org/dist/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz
+
+tar -xvzf apache-maven-3.5.3-bin.tar.gz
+
+==========================oooooooooooo============================
+-------------------------------------
+to set the variables 
+
+export M2_HOME=/opt/apache-maven-3.5.3
+
+export PATH=$PATH:$M2_HOME/bin
+-----------------------------------------
+
+---------------------------------------------------------------
+IF YOU WANT TO SET ENVIRONMENTAL VARIABLES OR NORMAL VARIABLES PARMANENTLY 
+
+==>> Goto /etc/bashrc OR    ubuntu like Goto /etc/.bashrc
+      ---------------                   -----------------
+	  ^^^^^^^^^^^^^^^                   ^^^^^^^^^^^^^^^^^
+add this stuff
+	  
+M2_HOME=/opt/apache-maven-3.5.3
+export M2_HOME
+export PATH=$PATH:$M2_HOME/bin
+-----------------------------------------------------------------
+==================================ooooooo======================================
+
+
+
+========================
+sonarQube
+=====================
+NEDD java jdk 1.8 
+
+wget https://akamai.bintray.com/40/40e399714d5001366f61d6009bbbc4836789c832e9cb4d5cdddd2274e234c66f?__gda__=exp=1525361725~hmac=8b3c1c16e35a9b154b8c0ee7bd722663bc5c15f67022ff1915e03b432b602a70&response-content-disposition=attachment%3Bfilename%3D%22sonarqube-6.7.3.zip%22&response-content-type=application%2Fzip&requestInfo=U2FsdGVkX18qWrQEFZzuYyb-g0-vtMakSW7McR_CdEYgVA_pks6JENw6PdkdK5exsz8i1tQDTSBZKceIM-OVnD4QLkDnPbENaKq7ytfe7lgRYIg0J19BrhOa28XaHeFv6F1cAmumDa4_UCmcTcRc8BAj4tlosFndG3v2O9HMzQnHUokHgZcgDewiQfWgR3JC&response-X-Checksum-Sha1=88e20eba2aea456b91a6a3356552b4b7a5688ada&response-X-Checksum-Sha2=40e399714d5001366f61d6009bbbc4836789c832e9cb4d5cdddd2274e234c66f
+
+unzip <SonarQube>
+
+goto bin if it is linux goto use linux dir SonarQube
+goto bin if it is windows  goto use windows dir SonarQube
+
+
+===========================
+Nexus
+===================
+NEDD java jdk 1.8 
+
+wget https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/oss/nexus-2.14.8-01-bundle.zip
+
+unzip nexus-2.14.8-01-bundle.zip
+
+./nexus start
+
+export RUN_AS_ROOT=root
+
+./nexus start
+
+
+open brouser use the nexus repo 
+
+httpt://18.220.152.182:8081/nexus
+
+
+=======================
+atlassian-jira-software
+=======================
+NEDD java jdk 1.8 
+
+wget https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-7.9.1-x64.bin
+
+
+
+
+SCP_ commands:
+
+scp /home/ansible/epel-release-latest-7.noarch.rpm ansible@18.219.18.145:/home/ansible/
+
+scp /home/ansible/epel-release-latest-7.noarch.rpm ansible@18.219.18.145:/home/ec2-user/
+
+ Copying files/directories between two remote hosts
+ ---------------------------------------------------------------
+To copy a file between two hosts, ssh service should be running on both the machines. 
+The -3 option will transfer files between two remote hosts via the local host. 
+The following command copies the file /home/raghu/myfile1.txt from the machine 192.168.1.10 to /tmp directory on 192.168.1.20 machine, with verbose output.
+
+$ scp -3 -v raghu@192.168.1.10:/home/raghu/myfile1.txt raghu@192.168.1.20:/tmp
+
+
+SFTP::::)))  
+ https://linoxide.com/linux-how-to/how-transfer-files-servers-sftp-commands-linux/
+
+sftp user@ip
+enter passwd of  destination server
+
+lcd ---> local change directory
+cd -->> change remote directory
+lmkdir --> local make a dir
+mkdir  -->> 
+
+put  filename  /destnation_dir
+get  /destnation_dir  file_path
+
+mput  *.java  /destnation_dir    -------->>> to put multiple files 
+mget  /destnation_dir  file_path*./java  ---------->>> to get multiple files
+
+
+
+
+
+
+

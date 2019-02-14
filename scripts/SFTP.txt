@@ -1,0 +1,16 @@
+SFTP::::)))  
+ https://linoxide.com/linux-how-to/how-transfer-files-servers-sftp-commands-linux/
+
+sftp user@ip
+enter passwd of  destination server
+
+lcd ---> local change directory
+cd -->> change remote directory
+lmkdir --> local make a dir
+mkdir  -->> 
+
+put  filename  /destnation_dir
+get  /destnation_dir  file_path
+
+mput  *.java  /destnation_dir    -------->>> to put multiple files 
+mget  /destnation_dir  file_path*./java  ---------->>> to get multiple files

@@ -1,0 +1,22 @@
+				
+		# linux_directory structure 		
+				bin                   
+				boot                       
+				data
+				dev
+				etc
+				home
+				lib
+				lib64
+				media
+				mnt
+				opt
+				proc
+				root
+				run
+				sbin
+				srv
+				sys
+				tmp
+				usr
+				var

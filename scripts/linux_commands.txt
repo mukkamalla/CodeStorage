@@ -1,0 +1,172 @@
+Linux_Commands:::::::::::::::::))))))
+
+To install the package 
+-----------------------
+yum install <package_name>-y
+
+
+
+---------------------------------------
+mkdir  dir -> To create a directory 
+mkdir -p  -> To create a directory in recursive mode [Ex:   # mkdir -p  'project/project1/requirments ]
+touch  file _name -> To create a file 
+touch file_name{1..5}  ->To create a file in a range
+
+Tree Command :::::))))			
+if tree command shows not found like then you can install tree command
+ yum install tree -y																																				alt + u   -->> Upper case letter
+ tree directory  ->> To show tree structure 																														alt + l     -->> Lower case letter 
+ Ex:																																																ctrl + a    ---> curser goes to start  point
+																																																	ctrl + e   -->> surser goes to end point
+
+Cat commands:::::::::::::)))))))
+cat file_name  -> To read a file 
+cat > file_name  ->  To overwrite  a file   
+cat >> file_name -> To append something in a file.
+
+
+File Editor Commands:::)))))
+ vi file_name  -> To edit the File  
+   ====>> Esc : wq!  -> Save and exit
+ nano  file_name  ->>To edit the  File
+   ====>> ctrl + x  To exit from file|
+				 Y/N ->> chose yes / no    |))))))  
+				 Enter 								 |
+				 
+				 
+Remove commands :::::::::::::::::::))))
+# rm file-name                      -------->>>    : Deletes file
+#  rm -r directory-name           --->>>>     : Deletes directory recursively 
+# rm -f file-name           ------>>>>>           : Forcefully removes file
+rm -rf directory-name                ----->>>>  : Forcefully removes directory recursively
+
+
+Copy and move Commands:::::)))))
+ cp file_name or dir  /path  ->  copy the file 
+ mv file_name or dir  /path  ->  To move the dir/file
+mv OldFileName NewFileName  -->>>command   you can use name change
+ 
+ 
+ List out files and directories::::)))))
+ ls  -> list of  file /directories 
+ ls -a ->  To list out hidden files
+ ls -al     ---->>>>>                     : Displays all information about files/directories. This includes displaying all hidden files as well
+ ll  -> list out along with details
+ 
+ Link file Creation ::::::::::::))))))))
+ ln -s  path_of_the_file Destination -->> Soft_Link
+ ln path_of_the_file Destination  --> Hard_Link 
+ unlink  file_name  -> To unlink file
+ 
+ Download File::::::::)))))
+ wget https://url.com
+ 
+package install in RHEL/CENTOS::::::))))))
+yum install package  ->  install the package
+yum remove package -->  uninstall the package 
+
+RPM package install ::::::))))
+rpm -ivh package.rpm -->  To install rpm package. 
+
+Extract tar file:::))))
+tar -xvzf  file.tar.gz --> To extract tar file
+
+Information Commands:::::)))))
+free -m ->> To check the memory 
+cat /proc/meminfo --> information about memory 
+
+
+System services Status :::::))))
+systemctl status service_name --> like httpd , docker ,ssh	
+systemctl start service_name --> To start the service 
+systemctl restart service_name -->> To restart the services 
+systemctl enable service_name -->> To enable the service																			#   man command _name  --> To get help
+
+Process Status::::::::::::::)))))))))
+ps --> To know process status
+ps -eaf | grep -i tomcat/httpd                      -i, --ignore-case        @@@ 
+																		  Ignore case distinctions in  both  the  PATTERN  and  the  input        
+																		  files.  (-i is specified by POSIX.)
+																		  
+																		  
+Listening  port :::::::::)))))))
+netstat
+
+File_Permmissions :::::::::::)))))
+chmod 777 file/dir                                           r=4         user             group             others 
+								           									w=2           |                   |                      |
+																			x=1			rwx               rwx                 rwx
+
+																			
+Environment variables ::::::)))))
+export Name=Value  -->> To set the environment variables
+echo $Name  --> It Displays  what you have given in value
+if you want to add permanently just goto  /etc/bashrc   and add there
+
+
+Important file paths::::::::::)))))))))
+etc---->>>}
+                  }
+
+
+				  
+	
+	
+	
+	List owners of files in a directory using stat command;;;;:::::)))
+ 
+# yum -y install coreutils  --->> First we need to install the package.  If for any reason this package is not installed, you can install it using the command:
+
+ So command syntax is:
+ # stat -c %U  <file>                 		-c : To specify the format
+														 %U : Format for printing username of the file owner
+#  find /dir -printf '%u\n'    -->>   List owners of files in a directory using find command
+
+
+ #  find /dir -printf '%u\n' | sort -t: -u   --->   To get the list of users 
+ #  find /dir -printf '%u:%g\n' | sort -t: -u  --->> To get the list of user and along with the group
+ 
+ 
+ 
+ 
+ 
+ To find out how many user that you have 
+     awk -F: '/\/home/ {printf "%s:%s\n",$1,$3}' /etc/passwd
+	 
+	 
+	 
+-------------------------------------------------------------------------------------------------------------	 
+	 /etc/passwd (whenever the file is deleted ) to restore copy backup file to passwd-
+	 cp /etc/passwd- /etc/passwd
+	--------------------------------------------------------------------------------------
+	
+	
+	User Lock Unlock
+	--------------------
+	sudo usermod -L ec2-user
+	sudo usermod -U ec2-user
+	
+	
+	
+	Firewall Enable 
+	-------------------
+	sudo firewall-cmd --permanent --add-port=80/tcp --zone=public
+
+ 
+
+
+
+
+ 
+ 
+
+
+
+
+   
+ 
+   venkey.m@consultant.thomsonruters.com
+   venkatesh.1@consultant.volvo.com
+
+
+

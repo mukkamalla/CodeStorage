@@ -1,0 +1,15 @@
+SCP_ commands:
+
+intially you need to enable coments   ---->> /etc/ssh/sshd_config 
+
+scp /home/ansible/epel-release-latest-7.noarch.rpm ansible@18.219.18.145:/home/ansible/
+
+scp /home/ansible/epel-release-latest-7.noarch.rpm ansible@18.219.18.145:/home/ec2-user/
+
+ Copying files/directories between two remote hosts
+ ---------------------------------------------------------------
+To copy a file between two hosts, ssh service should be running on both the machines. 
+The -3 option will transfer files between two remote hosts via the local host. 
+The following command copies the file /home/raghu/myfile1.txt from the machine 192.168.1.10 to /tmp directory on 192.168.1.20 machine, with verbose output.
+
+$ scp -3 -v raghu@192.168.1.10:/home/raghu/myfile1.txt raghu@192.168.1.20:/tmp

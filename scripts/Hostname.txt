@@ -1,0 +1,25 @@
+
+
+Insted of ip address you can setup  the hostname              Ex: 172.84.69.31  ----> devops.command
+-----------------------------------------------
+
+hostname --->> to check what is your hostname
+
+hostname <host_name> -->> to create a hostname
+
+or 
+
+if you want to set the hostname for always you can use the command
+
+hostnamectl set-hostname <hostname>
+
+
+		whenyou create the hostname you should logout and login into server
+
+exit  --> exit is command to logout from the server
+
+
+
+
+
+

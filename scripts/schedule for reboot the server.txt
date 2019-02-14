@@ -1,0 +1,7 @@
+
+
+shutdown -r +30              -r   is reboot   +30  is time for half an hour   you can set it up different time
+
+shutdown -c   ---->> to cancel the scheduled 
+
+shutdown -h +60 --->>   -h is halt means going to shutdown

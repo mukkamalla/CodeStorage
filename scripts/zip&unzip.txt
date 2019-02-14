@@ -1,0 +1,14 @@
+ 
+ ZIP & UNZIP
+ 
+ zip squash.zip file1 file2 file3
+ 
+ unzip squash.zip -----> to extract the file
+
+ 
+ How To Compress A File Using "gzip"
+ 
+ gzip filename
+ 
+ How To Decompress A File Using The "gzip" Command			https://www.lifewire.com/example-uses-of-the-linux-gzip-command-4078675
+ gzip -d filename.gz

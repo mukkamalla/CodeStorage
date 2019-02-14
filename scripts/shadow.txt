@@ -1,0 +1,5 @@
+
+
+if shadow file is delete you can get  back 
+shadow is file to protect the user info
+cp -v /etc/shadow- /etc/shadow

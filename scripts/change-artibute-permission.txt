@@ -1,0 +1,9 @@
+change attribute permissions
+-----------------------------------
+Description---:> even root doesnt able to delete 
+Here are commands
+-----------------------
+
+chattr +i file_name
+lsattr file_name ---> to know the status 
+chattr -i file_name

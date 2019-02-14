@@ -1,0 +1,13 @@
+Use $() over backticks
+Avoid using backticks ““”, they are hard to read and in some fonts easily confused with single quotes. A lot of quoting needed in nesting.
+
+Example:
+
+$ echo "one-$(echo two-$(echo three-$(echo four)))"
+
+1
+one-two-three-four
+$ echo "one-`echo two-\`echo three-\`\`echo four\`\`\``"
+
+1
+one-two-three-four

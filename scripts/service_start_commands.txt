@@ -1,0 +1,6 @@
+
+yum install httpd ---> yes
+systemctl start httpd ---> yes
+systemctl restart httpd
+systemctl status httpd
+systemctl enable httpd ----> yes

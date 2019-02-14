@@ -1,0 +1,30 @@
+
+
+
+pre-requaird 
+install  epel package --->>   wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm   ----->>>> https://www.cyberciti.biz/faq/installing-rhel-epel-repo-on-centos-redhat-7-x/
+												rpm -ivh epel-release-latest-7.noarch.rpm									
+												then it would be work
+yum install sshpass  --->> whenever using scp command that would be ask password  to never ask the passwd we  need to install the package called sshpass
+
+sshpass -p "12345" scp google.sh ansible@18.219.142.184:/home/ansible
+						|
+			Genarally we need to followup the variable
+
+
+			
+deploment 
+-----------------
+#! /bin/bash
+# shell script :: war file deploy into different environments like QA Uat
+if  [ $ENVIRONMENT = "QA" ]
+		then 
+			echo "deploy into "$ENVIRONMENT" Environment."
+							sshpass -p "passwd" scp file.war  user_name@ip_address : /home/user_name/Deploymet_dir/apache_tomcat/webapps
+							
+elif  [ $ENVIRONMENT ="PROD" ]
+		echo "deploy into  "$ENVIRONMENT" environment ".
+							sshpass -p "passwd" scp file.war  user_name@ip_address : /home/user_name/Deploymet_dir/apache_tomcat/webapps
+fi
+		
+							
